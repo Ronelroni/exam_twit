@@ -1,0 +1,27 @@
+
+<%= render 'header' %>
+<div class="container">
+    <h1>Posts</h1>
+    <p id="notice" class="text-light text-center bg-success w-100"><%= notice %></p>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <% @posts.each do |post| %>
+        <div class="col">
+            <div class="card">
+               
+
+                <div class="card-body">
+                   
+                    <p class="card-text"><%= post.description %></p>
+                </div>
+                <div class="card-footer lien clearfix"> 
+                    <p><%= link_to 'Show', post, class: "btn btn-primary"  %></p>
+                    <p><%= link_to 'Edit', edit_post_path(post), class: "btn btn-warning" %></p>
+                    <p><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></p>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<%= render "footer" %>

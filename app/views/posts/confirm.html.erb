@@ -1,0 +1,13 @@
+<%= render 'header' %>
+<div class="container">
+    <h3>Confirm this post</h3>
+    <%= form_with(model: @post, local: true) do |form| %>
+    <%= form.hidden_field :description %>
+
+    <p>Description: <%= @post.description %></p>
+    <%= form.submit  "confirm" %>
+    <%= form.submit  "return" , name: 'back' %>
+    <% end %>
+</div>
+
+<%= render "footer" %>
